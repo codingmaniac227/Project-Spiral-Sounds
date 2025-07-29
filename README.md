@@ -148,7 +148,7 @@ Even though Spiral Sounds is a learning project, it's important to consider secu
 - Controllers return raw `err.message` to the client:  
 ```js
 res.status(500).json({ error: 'Failed to fetch products', details: err.message })
-
+```
 ### 🔮 Future Risks to Watch Out For
 
 ⚠️ **No HTTPS**  
@@ -162,8 +162,6 @@ res.status(500).json({ error: 'Failed to fetch products', details: err.message }
 import helmet from 'helmet';
 app.use(helmet());
 ```
-
-
 
 
 ## 🚀 Future Enhancements
