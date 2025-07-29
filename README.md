@@ -136,10 +136,8 @@ Even though Spiral Sounds is a learning project, it's important to consider secu
 - Currently, anyone can make unlimited requests to the API.  
 - **Risk:** The server could be flooded (DoS attack).  
 - **Fix:** Add [`express-rate-limit`](https://www.npmjs.com/package/express-rate-limit):  
-```js
-import rateLimit from 'express-rate-limit';
-const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100 });
-app.use(limiter);
+```js import rateLimit from 'express-rate-limit'; const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }); app.use(limiter);
+```
 
 ✅ **Database File Location**  
 - The `database.db` file sits in the project root.  
@@ -163,6 +161,8 @@ res.status(500).json({ error: 'Failed to fetch products', details: err.message }
 ```js
 import helmet from 'helmet';
 app.use(helmet());
+```
+
 
 
 
