@@ -114,6 +114,56 @@ Welcome to **Spiral Sounds** — a full‑stack vinyl record store built with **
 
 &nbsp; - Split code into routes, controllers, and DB utilities for clarity.
 
+## 🔒 Security Overview
+
+Even though Spiral Sounds is a learning project, it's important to consider security. Below is a breakdown of **current security risks in the codebase** and **future risks to be mindful of as the project grows**.
+
+---
+
+### 🚨 Existing Security Risks (Must Address)
+
+✅ **SQL Injection (partially mitigated)**  
+- Queries already use **parameterized statements** (`?` placeholders), which is good.  
+- **Risk:** If any future queries concatenate raw user input directly, they could be exploited.  
+- **Fix:** Continue using `?` placeholders and validate all inputs.
+
+✅ **Public API (no authentication)**  
+- All endpoints (`/api/products`, `/api/products/genres`) are **open to everyone**.  
+- **Risk:** Anyone can spam the API or extract data.  
+- **Fix:** Add **JWT authentication** or sessions for admin tasks (adding/removing products).
+
+✅ **No Rate Limiting**  
+- Currently, anyone can make unlimited requests to the API.  
+- **Risk:** The server could be flooded (DoS attack).  
+- **Fix:** Add [`express-rate-limit`](https://www.npmjs.com/package/express-rate-limit):  
+```js
+import rateLimit from 'express-rate-limit';
+const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100 });
+app.use(limiter);
+
+✅ **Database File Location**  
+- The `database.db` file sits in the project root.  
+- **Risk:** If deployed incorrectly, someone could directly download the DB.  
+- **Fix:** Place the DB **outside** the web root in production and restrict file permissions.
+
+✅ **Error Message Exposure**  
+- Controllers return raw `err.message` to the client:  
+```js
+res.status(500).json({ error: 'Failed to fetch products', details: err.message })
+
+### 🔮 Future Risks to Watch Out For
+
+⚠️ **No HTTPS**  
+- **Risk:** Without HTTPS, all requests (like searches) are sent in plaintext and could be intercepted.  
+- **Plan:** Deploy the app with HTTPS enabled using services like Render, Railway, or a reverse proxy like Nginx.
+
+⚠️ **No Security Headers**  
+- **Risk:** Express by default doesn’t set important HTTP security headers.  
+- **Plan:** Add [Helmet](https://github.com/helmetjs/helmet) to automatically configure headers like CSP, X-Frame-Options, and others:
+```js
+import helmet from 'helmet';
+app.use(helmet());
+
 
 
 ## 🚀 Future Enhancements
