@@ -1,26 +1,26 @@
-\# 🎵 Spiral Sounds 🎵
+# 🎵 Spiral Sounds 🎵
 
-Welcome to \*\*Spiral Sounds\*\* — a full‑stack vinyl record store built with \*\*Node.js, Express, SQLite, and Vanilla JavaScript\*\*. This project combines a \*\*dynamic frontend\*\* with a \*\*RESTful backend\*\* to deliver a fully functioning e‑commerce‑style app where users can browse vinyl records by genre or search by title.
-
-
-
-\## This project highlights:
-
-\- \*\*Express routing \& middleware\*\*
-
-\- \*\*SQLite database integration\*\*
-
-\- \*\*RESTful API design\*\*
-
-\- \*\*Static file serving with Express\*\*
-
-\- \*\*Frontend consumption of backend data\*\*
+Welcome to **Spiral Sounds** — a full‑stack vinyl record store built with **Node.js, Express, SQLite, and Vanilla JavaScript**. This project combines a **dynamic frontend** with a **RESTful backend** to deliver a fully functioning e‑commerce‑style app where users can browse vinyl records by genre or search by title.
 
 
 
-\## ✨ Features
+## This project highlights:
 
-\- \*\*📀 Product Browsing\*\*
+- **Express routing & middleware**
+
+- **SQLite database integration**
+
+- **RESTful API design**
+
+- **Static file serving with Express**
+
+- **Frontend consumption of backend data**
+
+
+
+## ✨ Features
+
+- **📀 Product Browsing**
 
 &nbsp; - Displays a curated selection of vinyl albums with title, artist, price, and genre.
 
@@ -28,15 +28,15 @@ Welcome to \*\*Spiral Sounds\*\* — a full‑stack vinyl record store built wit
 
 
 
-\- \*\*🔍 Search \& Filter\*\*
+- **🔍 Search & Filter**
 
-&nbsp; - A \*\*search bar\*\* filters albums by title, artist, or genre in real time.
+&nbsp; - A **search bar** filters albums by title, artist, or genre in real time.
 
-&nbsp; - A \*\*genre dropdown\*\* dynamically populates from the database and filters albums when selected.
+&nbsp; - A **genre dropdown** dynamically populates from the database and filters albums when selected.
 
 
 
-\- \*\*🌐 API-Driven Rendering\*\*
+- **🌐 API-Driven Rendering**
 
 &nbsp; - JavaScript fetches album data via `/api/products` and renders the product cards dynamically.
 
@@ -44,7 +44,7 @@ Welcome to \*\*Spiral Sounds\*\* — a full‑stack vinyl record store built wit
 
 
 
-\- \*\*🖱️ Event-Driven UI\*\*
+- **🖱️ Event-Driven UI**
 
 &nbsp; - Search input triggers real‑time filtering.
 
@@ -52,21 +52,21 @@ Welcome to \*\*Spiral Sounds\*\* — a full‑stack vinyl record store built wit
 
 
 
-\## 🧱 Key Backend Elements
+## 🧱 Key Backend Elements
 
-\- \*\*✅ Express Router\*\*
+- **✅ Express Router**
 
 &nbsp; - `productsRouter` handles `/api/products` and `/api/products/genres`.
 
-\- \*\*✅ Controllers\*\*
+- **✅ Controllers**
 
-&nbsp; - `getProducts()` \& `getGenres()` manage SQL queries and send JSON responses.
+&nbsp; - `getProducts()` & `getGenres()` manage SQL queries and send JSON responses.
 
-\- \*\*✅ SQLite Database\*\*
+- **✅ SQLite Database**
 
 &nbsp; - `products` table stores all album info (title, artist, price, genre, etc.).
 
-\- \*\*✅ Scripts\*\*
+- **✅ Scripts**
 
 &nbsp; - `createTable.js` → creates DB table.
 
@@ -76,73 +76,73 @@ Welcome to \*\*Spiral Sounds\*\* — a full‑stack vinyl record store built wit
 
 
 
-\## 🎨 Key Frontend Elements
+## 🎨 Key Frontend Elements
 
-\- \*\*📐 Dynamic Rendering\*\*
+- **📐 Dynamic Rendering**
 
 &nbsp; - `index.js` fetches product JSON and dynamically builds product cards.
 
-\- \*\*🎨 Styling\*\*
+- **🎨 Styling**
 
 &nbsp; - `index.css` uses clean, modern styles for the storefront layout.
 
-\- \*\*🖼️ Images\*\*
+- **🖼️ Images**
 
 &nbsp; - All vinyl cover art and logos live in the `public/images` folder and are dynamically displayed.
 
 
 
-\## 🧠 Concepts Practiced
+## 🧠 Concepts Practiced
 
-\- \*\*Express Basics\*\*
+- **Express Basics**
 
 &nbsp; - Serving static files, setting up routers, using middleware.
 
-\- \*\*REST API Design\*\*
+- **REST API Design**
 
 &nbsp; - Created endpoints for `/api/products` and `/api/products/genres`.
 
-\- \*\*SQL Queries\*\*
+- **SQL Queries**
 
 &nbsp; - Used `SELECT`, `INSERT`, `DISTINCT` and `WHERE` clauses for flexible data retrieval.
 
-\- \*\*Frontend-Backend Integration\*\*
+- **Frontend-Backend Integration**
 
 &nbsp; - Fetch API connects the frontend to the Express backend seamlessly.
 
-\- \*\*Modular Structure\*\*
+- **Modular Structure**
 
 &nbsp; - Split code into routes, controllers, and DB utilities for clarity.
 
 
 
-\## 🚀 Future Enhancements
+## 🚀 Future Enhancements
 
-\- Add authentication for user accounts and carts.
+- Add authentication for user accounts and carts.
 
-\- Implement Stripe or PayPal for \*\*checkout and payments\*\*.
+- Implement Stripe or PayPal for **checkout and payments**.
 
-\- Add the ability to \*\*add/remove items to a cart\*\*.
+- Add the ability to **add/remove items to a cart**.
 
-\- Deploy to a platform like Render, Railway, or Heroku for live demo access.
-
-
-
-\## 🪞 Reflection
-
-This project represents my \*\*transition from purely frontend apps\*\* to \*\*true full‑stack development\*\*. It taught me:
+- Deploy to a platform like Render, Railway, or Heroku for live demo access.
 
 
 
-\- How to structure an Express project with routers and controllers.
+## 🪞 Reflection
 
-\- How to connect an SQLite database and write queries.
-
-\- How to serve a frontend and backend together in one app.
+This project represents my **transition from purely frontend apps** to **true full‑stack development**. It taught me:
 
 
 
-By building \*\*Spiral Sounds\*\*, I now have a \*\*portfolio‑ready\*\* example of a \*\*real‑world full‑stack app\*\* that combines everything I’ve learned so far — and sets the stage for future enhancements like authentication and payments.
+- How to structure an Express project with routers and controllers.
+
+- How to connect an SQLite database and write queries.
+
+- How to serve a frontend and backend together in one app.
+
+
+
+By building **Spiral Sounds**, I now have a **portfolio‑ready** example of a **real‑world full‑stack app** that combines everything I’ve learned so far — and sets the stage for future enhancements like authentication and payments.
 
 
 
